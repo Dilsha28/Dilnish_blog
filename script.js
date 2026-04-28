@@ -1,3 +1,4 @@
+// Blog category filter
 const filterButtons = document.querySelectorAll(".filter-btn");
 const posts = document.querySelectorAll(".post-card");
 
@@ -9,7 +10,9 @@ filterButtons.forEach(button => {
     const category = button.dataset.category;
 
     posts.forEach(post => {
-      if (category === "all" || post.dataset.category === category) {
+      const postCategory = post.dataset.category;
+
+      if (category === "all" || postCategory === category) {
         post.classList.remove("hidden");
       } else {
         post.classList.add("hidden");
@@ -18,18 +21,30 @@ filterButtons.forEach(button => {
   });
 });
 
+// Dark / light mode with saved preference
 const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light");
+  themeToggle.textContent = "☀️";
+} else {
+  themeToggle.textContent = "🌙";
+}
 
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
 
   if (document.body.classList.contains("light")) {
-    themeToggle.innerHTML = "☀️";
+    localStorage.setItem("theme", "light");
+    themeToggle.textContent = "☀️";
   } else {
-    themeToggle.innerHTML = "🌙";
+    localStorage.setItem("theme", "dark");
+    themeToggle.textContent = "🌙";
   }
 });
 
+// Local visit counter
 let visits = localStorage.getItem("visits");
 
 if (!visits) {
@@ -39,15 +54,40 @@ if (!visits) {
 }
 
 localStorage.setItem("visits", visits);
-document.getElementById("visitorCount").textContent = visits;
 
-function downloadMessage() {
-  alert("Free resource coming soon 💜 Later you can add a real PDF download.");
+const visitorCount = document.getElementById("visitorCount");
+
+if (visitorCount) {
+  visitorCount.textContent = visits;
 }
 
+// Free resource button
+function downloadMessage() {
+  alert("Free resume checklist coming soon 💜");
+}
+
+// Contact form message
 const contactForm = document.querySelector(".contact-form");
 
-contactForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-  alert("Thank you 💜 Later we can connect this form to your email.");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("Thank you 💜 Your message form is ready. Next, we can connect it to email using Formspree.");
+    contactForm.reset();
+  });
+}
+
+// Track blog link clicks in Google Analytics
+const blogLinks = document.querySelectorAll(".post-card a");
+
+blogLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+      gtag("event", "blog_link_click", {
+        link_text: link.textContent.trim(),
+        link_url: link.href
+      });
+    }
+  });
 });

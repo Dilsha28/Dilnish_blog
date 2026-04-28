@@ -17,6 +17,7 @@
   </script>
 
   <!-- Microsoft Clarity -->
+  <!-- Replace YOUR_CLARITY_ID with your real Clarity ID -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -30,6 +31,8 @@
 
 <body>
 
+<button id="themeToggle" aria-label="Toggle theme">🌙</button>
+
 <header class="hero" id="home">
   <nav class="navbar">
     <h2 class="logo">Dilnish<span>Digital</span></h2>
@@ -41,8 +44,6 @@
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
     </div>
-
-    <button id="themeToggle">🌙</button>
   </nav>
 
   <section class="hero-content">
@@ -67,7 +68,7 @@
 <section class="stats">
   <div class="stat-card">
     <h3 id="visitorCount">0</h3>
-    <p>Your visits</p>
+    <p>Your visits on this browser</p>
   </div>
 
   <div class="stat-card">
@@ -162,7 +163,7 @@
   <p class="section-label">BLOG</p>
   <h2>Latest posts</h2>
   <p class="section-text">
-    Blog posts help bring visitors from Google and build traffic.
+    Real resources to help visitors learn, improve SEO and understand website traffic.
   </p>
 
   <div class="filters">
@@ -175,23 +176,38 @@
   <div class="grid">
     <article class="post-card" data-category="tech">
       <span class="category">Tech</span>
-      <h3>How I built my first website for free</h3>
-      <p>A beginner guide to building and hosting a website with a custom domain.</p>
-      <a href="#">Read More →</a>
+      <h3>Learn Web Development From Scratch</h3>
+      <p>Start learning HTML, CSS and JavaScript with beginner-friendly MDN lessons.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">
+        Read on MDN →
+      </a>
     </article>
 
     <article class="post-card" data-category="career">
       <span class="category">Career</span>
-      <h3>How to build a student resume</h3>
-      <p>Simple resume tips for students applying for jobs and internships.</p>
-      <a href="#">Read More →</a>
+      <h3>Improve Your Website SEO</h3>
+      <p>Learn how Google understands websites and how to improve search visibility.</p>
+      <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank">
+        Read Google SEO Guide →
+      </a>
     </article>
 
     <article class="post-card" data-category="money">
-      <span class="category">Money</span>
-      <h3>How students can start earning online</h3>
-      <p>Beginner-friendly ways students can earn using digital skills.</p>
-      <a href="#">Read More →</a>
+      <span class="category">Analytics</span>
+      <h3>Set Up Google Analytics</h3>
+      <p>Track visitors, page views, devices and traffic sources using Google Analytics.</p>
+      <a href="https://support.google.com/analytics/answer/9304153" target="_blank">
+        Read GA4 Setup Guide →
+      </a>
+    </article>
+
+    <article class="post-card" data-category="money">
+      <span class="category">Tracking</span>
+      <h3>Understand User Behaviour With Clarity</h3>
+      <p>Use heatmaps and recordings to see how visitors interact with your website.</p>
+      <a href="https://clarity.microsoft.com/" target="_blank">
+        Visit Microsoft Clarity →
+      </a>
     </article>
   </div>
 </section>
