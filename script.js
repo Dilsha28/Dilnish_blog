@@ -42,12 +42,12 @@ localStorage.setItem("visits", visits);
 document.getElementById("visitorCount").textContent = visits;
 
 function downloadMessage() {
-  alert("Free resource coming soon 💜 You can add a PDF later.");
+  alert("Free resource coming soon 💜 Later you can add a real PDF download.");
 }
 
 const contactForm = document.querySelector(".contact-form");
 
 contactForm.addEventListener("submit", function(event) {
   event.preventDefault();
-  alert("Thank you! Your message section is ready. Later we can connect this to email.");
+  alert("Thank you 💜 Later we can connect this form to your email.");
 });
