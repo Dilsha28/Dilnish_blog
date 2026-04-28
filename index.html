@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>TechBloom Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+
+  <nav class="navbar">
+    <h2 class="logo">TechBloom 💜</h2>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Articles</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <button id="darkToggle">🌙</button>
+  </nav>
+
+  <section class="hero-content">
+    <p class="tagline">TECH • CODING • CREATIVITY</p>
+
+    <h1>Build. Learn. Create.</h1>
+
+    <p>
+      A modern tech blog sharing web development,
+      student projects and digital creativity.
+    </p>
+
+    <button id="welcomeBtn">Explore Blog</button>
+  </section>
+
+</header>
+
+<main class="container">
+
+  <section class="intro-card">
+    <h2>Latest Articles</h2>
+    <p>Filter posts by category below.</p>
+  </section>
+
+  <section class="filters">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="web">Web Development</button>
+    <button class="filter-btn" data-category="student">Student Life</button>
+    <button class="filter-btn" data-category="projects">Projects</button>
+  </section>
+
+  <section class="blog-grid">
+
+    <article class="post-card" data-category="web">
+      <span class="category">Web Development</span>
+      <h3>Building My First Website</h3>
+      <p>
+        Learning HTML, CSS and JavaScript from scratch and deploying a real website.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="post-card" data-category="student">
+      <span class="category">Student Life</span>
+      <h3>Balancing Uni and Coding</h3>
+      <p>
+        How I manage projects, assignments and web development practice.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="post-card" data-category="projects">
+      <span class="category">Projects</span>
+      <h3>Creating My Purple Blog</h3>
+      <p>
+        Turning a simple blog into a modern interactive website.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="post-card" data-category="web">
+      <span class="category">JavaScript</span>
+      <h3>Making Sites Interactive</h3>
+      <p>
+        Adding filters, animations and dynamic effects with JavaScript.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="post-card" data-category="projects">
+      <span class="category">Projects</span>
+      <h3>Future Portfolio Ideas</h3>
+      <p>
+        How this blog can become a portfolio and full project platform.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="post-card" data-category="student">
+      <span class="category">Student Tips</span>
+      <h3>Study Productivity Setup</h3>
+      <p>
+        Tools and workflows I use for university and coding.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 TechBloom • Built with HTML CSS JS 💜</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
