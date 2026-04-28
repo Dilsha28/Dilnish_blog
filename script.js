@@ -1,13 +1,12 @@
-const buttons = document.querySelectorAll(".filter-btn");
+const filterButtons = document.querySelectorAll(".filter-btn");
 const posts = document.querySelectorAll(".post-card");
 
-buttons.forEach(button => {
+filterButtons.forEach(button => {
   button.addEventListener("click", () => {
-    buttons.forEach(btn => btn.classList.remove("active"));
-
+    filterButtons.forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
 
-    let category = button.dataset.category;
+    const category = button.dataset.category;
 
     posts.forEach(post => {
       if (category === "all" || post.dataset.category === category) {
@@ -19,18 +18,36 @@ buttons.forEach(button => {
   });
 });
 
-const toggle = document.getElementById("darkToggle");
+const themeToggle = document.getElementById("themeToggle");
 
-toggle.addEventListener("click", () => {
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
 
   if (document.body.classList.contains("light")) {
-    toggle.innerHTML = "☀️";
+    themeToggle.innerHTML = "☀️";
   } else {
-    toggle.innerHTML = "🌙";
+    themeToggle.innerHTML = "🌙";
   }
 });
 
-document.getElementById("welcomeBtn").addEventListener("click", function() {
-  alert("Welcome to TechBloom 💜");
+let visits = localStorage.getItem("visits");
+
+if (!visits) {
+  visits = 1;
+} else {
+  visits = Number(visits) + 1;
+}
+
+localStorage.setItem("visits", visits);
+document.getElementById("visitorCount").textContent = visits;
+
+function downloadMessage() {
+  alert("Free resource coming soon 💜 You can add a PDF later.");
+}
+
+const contactForm = document.querySelector(".contact-form");
+
+contactForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  alert("Thank you! Your message section is ready. Later we can connect this to email.");
 });
